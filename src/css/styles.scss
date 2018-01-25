@@ -1,4 +1,3 @@
-@import 'assets/foundation';
 // VARIABLES
 @import "base/variables";
 // MIXINS
@@ -7,6 +6,7 @@
 @import "mixins/typography";
 // BASE
 @import "base/normalize";
+@import 'assets/foundation';
 @import "base/scaffolding";
+@import 'base/fonts';
 // COMPONENTS
-@import "components/example";

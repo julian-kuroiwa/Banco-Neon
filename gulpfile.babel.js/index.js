@@ -68,7 +68,7 @@ gulp.task('sass', () => {
     return gulp.src(paths.css.src)
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(sass({ includePaths: ['node_modules/foundation-sites/'], outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(cleanCSS())
         .pipe(sourcemaps.write())

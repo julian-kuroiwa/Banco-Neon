@@ -1,0 +1,16 @@
+.header {
+    background-color: $base-color;
+    padding: 10px 0;
+}
+
+.header__title {
+    color: $white;
+    font-family: $font-bold;
+    @include font-scale(320, 1920, 16, 24);
+}
+
+@include tablet {
+    .header {
+        padding: 20px 0;
+    }
+}

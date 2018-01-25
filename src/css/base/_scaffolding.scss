@@ -17,7 +17,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-family: "Averta Bold";
+    font-family: $font-regular;
+    background-color: $base-color;
 }
 
 input,
@@ -93,27 +94,6 @@ h6 {
     cursor: pointer;
 }
 
-.only-mobile {
-    @include min-width(768) {
-        display: none !important;
-    }
-}
-
-.only-desk {
-    @include max-width(767) {
-        display: none !important;
-    }
-}
-
 .stroke {
     text-decoration: line-through;
-}
-
-// DEBUG
-* {
-    // outline: 1px solid red !important;
-}
-
-.no-margin-bottom {
-    margin-bottom: 0!important;
 }

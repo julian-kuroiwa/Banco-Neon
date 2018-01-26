@@ -35,7 +35,7 @@ const paths = {
     },
     scripts: {
         entryPoint: path.join(CONFIG.root.src, CONFIG.tasks.scripts.src, 'main.js'),
-        src: path.join(CONFIG.root.src, CONFIG.tasks.scripts.src, '/**'),
+        src: path.join(CONFIG.root.src, CONFIG.tasks.scripts.src, '/**/*.js'),
         dest: path.join(CONFIG.root.dest, CONFIG.tasks.scripts.dest)
     },
     fonts: {

@@ -1,20 +1,12 @@
-(function(win, doc) {
+import Delete from './components/Delete';
 
-    'use strict';
+class Main {
+    constructor() {
+        new Delete();
 
-    // arrow function
-    [1, 2, 3].map(num => num * 2);
+    }
+}
 
-    // new variable type
-    const world = 'World';
-
-    /* eslint-disable no-console */
-
-    // template string
-    console.log(`Hey ${world}`);
-
-    // spread
-    console.log(...[1, 2, 3]);
-
-
-})(window, document);
+window.addEventListener('load', function() {
+    new Main();
+})

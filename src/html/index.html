@@ -34,12 +34,12 @@
                 <h2 class="text-center content__title content__title--welcome">Bem-vindo</h2>
             </div>
             <div class="cell">
-                <div class="carousel">
-                    <div class="carousel__wrapper">
-                        <div class="card empty">
+                <div class="carousel" data-js="carousel">
+                    <div class="carousel__wrapper" data-js="carousel-wrapper">
+                        <div class="card empty active" data-js="slide" data-carousel="0">
                             <span class="icon icon--calendar"></span>
                         </div>
-                        <div class="card">
+                        <div class="card" data-js="slide" data-carousel="1">
                             <div class="card__item" data-js="item">
                                 <img src="img/icon-categoria.png" alt="Categoria" title="Categoria" class="icon icon--tool hide-for-small-only">
                                 <h6 class="item__type show-for-small-only">categoria</h6>
@@ -96,17 +96,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card empty">
+                        <div class="card empty" data-js="slide" data-carousel="2">
                             <span class="icon icon--calendar"></span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cell">
-                <div class="dots">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                <div class="dots" data-js="dots">
+                    <span class="dot active" data-js="dot" data-indicator="1"></span>
+                    <span class="dot" data-js="dot" data-indicator="2"></span>
+                    <span class="dot" data-js="dot" data-indicator="3"></span>
                 </div>
             </div>
         </section>

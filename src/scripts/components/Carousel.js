@@ -1,58 +1,55 @@
 class Carousel {
     constructor() {
-        this.dots = document.getElementsByClassName("dot");
-        this.slides = document.getElementsByClassName("slides");
-        this.wrapper = document.querySelector('.carousel__wrapper');
-        this.slideIndex = 1;
-        this.handleEvents();
-        // this.showSlides(this.slideIndex);
+        this.indicatorItem = document.querySelectorAll('[data-js="dot"]');
+        this.carouselItem = document.querySelectorAll('[data-js="slide"]');
+
+        this.indicatorIndex();
+
     }
 
-    handleEvents() {
-        // Array.prototype.forEach.call(this.dots, (element, index) => {
-        //     element.addEventListener('click', () => {
-        //         this.currentSlide(index + 1);
-        //     });
-        // })
-        console.log(this.wrapper);
+    hasClass(elem, klass) {
+        return (" " + elem.className + " ").indexOf(" " + klass + " ") > -1;
     }
 
-    dotsSize() {
-        return this.slides.length + 1;
+    itemSize() {
+        return this.carouselItem.length;
     }
 
-    dotsConstructor() {
-        let d = document.createDocumentFragment();
-        let dot = document.createElement('span');
-        let dotClass = dot.className = 'dot';
-        for (let i = 0; i < this.dotsSize(); i++) {
-            d.appendChild(dot);
+    indicatorSize() {
+        return this.indicatorItem.length;
+    }
+
+    getItemStyle() {
+        for (let i = 0; i < this.itemSize(); i++) {
+            if (this.hasClass(this.carouselItem[i], 'active'))
+                return window.getComputedStyle(this.carouselItem[i], null);
         }
-        document.querySelector('.dots').appendChild(d);
     }
 
-    plusSlides(n) {
-        this.showSlides(this.slideIndex += n);
+    itemStyles() {
+        let margin = parseInt(this.getItemStyle().marginLeft.replace('px', '')) + parseInt(this.getItemStyle().marginRight.replace('px', ''));
+        let width = parseInt(this.getItemStyle().width.replace('px', ''));
+
+        return margin + width;
     }
 
-    currentSlide(n) {
-        this.showSlides(this.slideIndex = n);
-    }
-
-    showSlides(n) {
-        let i;
-        if (n > this.slides.length) {
-            this.slideIndex = 1;
+    indicatorIndex() {
+        for (let i = 0; i < this.indicatorSize(); i++) {
+            let card = this.carouselItem[i];
+            let indicator = this.indicatorItem[i];
+            indicator.addEventListener('click', function() {
+                for (let i = 0; i < this.indicatorSize(); i++) {
+                    this.indicatorItem[i].classList.remove('active');
+                }
+                if (i === parseInt(card.getAttribute("data-carousel")))
+                    card.classList.add('active');
+            })
         }
-        if (n < 1) {
-            this.slideIndex = this.slides.length;
-        }
-
-        for (i = 0; i < this.dots.length; i++) {
-            this.dots[i].className = this.dots[i].className.replace(" active", "");
-        }
-        this.dots[this.slideIndex - 1].className += " active";
     }
+
+
+
+
 }
 
 export default Carousel;

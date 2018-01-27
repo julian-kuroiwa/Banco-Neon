@@ -1,25 +1,18 @@
-# Kuro Boilerplate
+# Banco Neon
 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/julian-kuroiwa/Kuro-Boilerplate/blob/master/LICENSE.md)
-
-This project uses ES6, SASS, Gulp and Browsersync.
-
-Maybe you want to read about them:
-- [GulpJS](http://gulpjs.com/)
-- [Sass](http://sass-lang.com/)
-- [Browsersync](https://www.browsersync.io/)
+This project is a Banco Neon test for front-end Developer
 
 ### Installation
 
-First of all, install the dependencies to run this boilerplate.
+First of all, install the dependencies to run this project.
 
 - [NodeJS](http://nodejs.org/)
 - [GulpJS](http://gulpjs.com/)
 
 ```sh
 # Clone this repository
-$ git clone git@github.com:julian-kuroiwa/kuro-boilerplate.git
-$ cd kuro-boilerplate
+$ git clone git@github.com:julian-kuroiwa/Banco-Neon.git
+$ cd Banco-Neon
 
 # install gulp globally
 $ npm install -g gulp
@@ -30,36 +23,6 @@ $ npm install
 ```
 
 With the commands above, you have everything to start.
-
-```sh
-├── README.md
-├── build
-│   ├── css/
-│   │   └── styles.css
-│   ├── img/
-│   ├── scripts/
-│   │   └── main.min.js
-│   ├── index.html
-├── gulpfile.babel.js
-│   ├── config.json
-│   ├── index.js
-├── package.json
-└── src
-    ├── img/
-    ├── scripts/
-    │   └── main.js
-    ├── css
-    │   ├── base/*.scss
-    │   ├── components/*.scss
-    │   ├── mixin/*.scss
-    │   ├── pages/*.scss
-    │   └── styles.scss
-    └── html
-    │   ├── components/*.html
-    └── └── index.html
-```
-
-Those folders and file will change during the project.
 
 ### Code Standards
 
@@ -77,10 +40,6 @@ This project also uses [Husky](https://github.com/typicode/husky) to prevent com
 - `gulp browser-sync`: inicialize a server
 - `gulp watch`: call for watch files
 - `gulp build`: run all tasks and deploy files to gh-pages
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 

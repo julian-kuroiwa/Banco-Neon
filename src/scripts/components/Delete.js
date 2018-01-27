@@ -19,6 +19,14 @@ class Delete {
                         }, 500);
                     }
                 })
+                let item = document.querySelectorAll('[data-js="item"]');
+                if (item.length <= 1) {
+                    for (let i = 0; i < item.length; i++) {
+
+                        item[i].parentNode.classList.add('empty');
+                        item[i].previousSibling.classList.remove('icon--hide');
+                    }
+                }
             })
         })
     }

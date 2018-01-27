@@ -33,23 +33,27 @@ class Carousel {
         return margin + width;
     }
 
+    removeActive(el) {
+        for (let i = 0; i < this.indicatorSize(); i++) {
+            el.classList.remove('active');
+        }
+    }
+
     indicatorIndex() {
         for (let i = 0; i < this.indicatorSize(); i++) {
             let card = this.carouselItem[i];
             let indicator = this.indicatorItem[i];
-            indicator.addEventListener('click', function() {
+            indicator.addEventListener('click', () => {
                 for (let i = 0; i < this.indicatorSize(); i++) {
                     this.indicatorItem[i].classList.remove('active');
                 }
-                if (i === parseInt(card.getAttribute("data-carousel")))
-                    card.classList.add('active');
+                if (i === parseInt(card.getAttribute("data-carousel"))) {
+                    indicator.classList.add('active');
+                    document.querySelector('.carousel__wrapper').style.marginLeft = "-" + (this.itemStyles() * i) + "px";
+                }
             })
         }
     }
-
-
-
-
 }
 
 export default Carousel;
